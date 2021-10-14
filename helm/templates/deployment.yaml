@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeportlister
+  namespace: kube-system
+  labels:
+    k8s-app: nodeportlister
+spec:
+  selector:
+    matchLabels:
+      k8s-app: nodeportlister
+  template:
+    metadata:
+      labels:
+        name: nodeportlister
+        k8s-app: nodeportlister
+    spec:
+      serviceAccount: nodeportlister
+      serviceAccountName: nodeportlister
+      containers:
+      - name: nodeportlister
+        image: alexanderteves/nodeportlister:v1.0.0
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8080
+          initialDelaySeconds: 10
+        ports:
+        - containerPort: 8080
+        env:
+        - name: BIND_ADDRESS
+          value: 0.0.0.0
+        - name: LISTEN_PORT
+          value: 8080

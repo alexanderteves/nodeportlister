@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nodeportlister
+  namespace: kube-system
+  labels:
+    k8s-app: nodeportlister
+spec:
+  rules:
+  - host: {{ .Values.ingress.hostname }}
+    http:
+      paths:
+      - backend:
+          serviceName: nodeportlister
+          servicePort: 8080
