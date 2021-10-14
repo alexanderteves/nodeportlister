@@ -3,12 +3,12 @@
 This small web application runs in your Kubernetes cluster and provides a quick and clean overview of configured nodeports:
 
 ```
-NODEPORT(S)    SERVICE                      NAMESPACE
-32202          jenkins                      development
-32205          logging-backend              engineering
-32204          logging-frontend             engineering
-32203          php-backend                  web
-30044          nginx                        web
+NODEPORT(S)    SERVICE             NAMESPACE
+32202          jenkins             development
+32205          logging-backend     engineering
+32204          logging-frontend    engineering
+32203          php-backend         web
+30044          nginx               web
 ```
 
 ## Usage
