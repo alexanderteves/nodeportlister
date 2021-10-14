@@ -13,7 +13,13 @@ NODEPORT(S)    SERVICE                      NAMESPACE
 
 ## Usage
 
-For deployment, install the Helm v3 chart inside `helm/`. Modify the ingress' hostname according to your setup in `helm/values.yaml`. The corresponding Docker image can be found [here](https://hub.docker.com/repository/docker/alexanderteves/nodeportlister).
+For deployment, install the Helm v3 chart inside `helm/`. Modify the ingress' hostname according to your setup in `helm/values.yaml` or set on installation:
+
+```
+$> helm install --set ingress.hostname="nodeport.example.com" nodeportlister ./helm
+```
+
+The corresponding Docker image can be found [here](https://hub.docker.com/repository/docker/alexanderteves/nodeportlister).
 
 ## Compatibility
 
