@@ -23,4 +23,4 @@ The corresponding Docker image can be found [here](https://hub.docker.com/r/alex
 
 ## Compatibility
 
-Binaries are compiled with `client-go` `v0.18.19` - if you run another Kubernetes version in your custer, your experience may vary.
+Binaries are compiled with `client-go` `v0.18.19` - if you run another Kubernetes version in your cluster, your experience may vary.
