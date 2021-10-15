@@ -19,7 +19,7 @@ spec:
       serviceAccountName: nodeportlister
       containers:
       - name: nodeportlister
-        image: alexanderteves/nodeportlister:v1.0.0
+        image: alexanderteves/nodeportlister:v1.0.2
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
