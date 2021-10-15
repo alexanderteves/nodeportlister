@@ -68,7 +68,7 @@ func main() {
 		buf, err := getNodePorts()
 		if err != nil {
 			log.Println(err)
-			http.Error(w, "Something went wrong", 500)
+			http.Error(w, "Internal server error", 500)
 		} else {
 			fmt.Fprint(w, buf.String())
 		}
